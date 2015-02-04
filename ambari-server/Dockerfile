@@ -66,6 +66,8 @@ RUN curl -o /usr/bin/jq http://stedolan.github.io/jq/download/linux64/jq && chmo
 RUN plugn init
 RUN plugn install https://github.com/sequenceiq/consul-plugins-install.git install
 RUN plugn enable install
+RUN plugn install https://github.com/sequenceiq/consul-plugins-ambari-restart ambari-restart
+RUN plugn enable ambari-restart
 
 COPY consul-event-handler.sh /consul-event-handler.sh
 
